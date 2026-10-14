@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國小教師檢定與甄選全攻略暨修課規定互動網頁</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            teal: '#0d9488',
+                            lightteal: '#f0fdfa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter / Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        /* 自訂平滑動畫與裝飾 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-teal-50 via-emerald-50 to-sky-50 text-slate-700 min-h-screen flex flex-col justify-between">
+
+    <!-- 頂部導覽列 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-teal-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-600 to-emerald-500 flex items-center justify-center text-white shadow-md font-bold text-xl">
+                    教
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-slate-800 leading-tight">國小教師養成全攻略</h1>
+                    <p class="text-xs text-teal-600 font-medium">修課規定・教檢・教甄互動指南</p>
+                </div>
+            </div>
+            <!-- 導覽連結 (桌面版) -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#roadmap" class="hover:text-teal-600 transition">培育四大階段</a>
+                <a href="#credits" class="hover:text-teal-600 transition">修課學分檢核</a>
+                <a href="#timeline" class="hover:text-teal-600 transition">大學時程規劃</a>
+                <a href="#faq" class="hover:text-teal-600 transition">常見 Q&A</a>
+            </nav>
+            <!-- 手機版選單按鈕 -->
+            <button id="menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- 手機版下拉選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-2">
+            <a href="#roadmap" class="block py-2 text-slate-600 hover:text-teal-600 font-medium">培育四大階段</a>
+            <a href="#credits" class="block py-2 text-slate-600 hover:text-teal-600 font-medium">修課學分檢核</a>
+            <a href="#timeline" class="block py-2 text-slate-600 hover:text-teal-600 font-medium">大學時程規劃</a>
+            <a href="#faq" class="block py-2 text-slate-600 hover:text-teal-600 font-medium">常見 Q&A</a>
+        </div>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main class="flex-grow">
+        <!-- 英雄橫幅 (Hero Section) -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 text-center">
+            <div class="inline-flex items-center space-x-2 bg-teal-100/80 text-teal-800 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-teal-600 animate-pulse"></span>
+                <span>給未來國小教育工作者的完整指引</span>
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                從零開始，成為正式<span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">國小教師</span>
+            </h2>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
+                整合教育學程修課規定、實習眉角、教師資格考試（教檢）與教師甄選（教甄）全方位路徑。透過互動學分檢核與階段導引，讓你的夢想清晰可見！
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#credits" class="bg-teal-600 hover:bg-teal-700 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-teal-600/20 transition transform hover:-translate-y-0.5">
+                    開始計算修課學分 📝
+                </a>
+                <a href="#roadmap" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-medium px-6 py-3 rounded-xl shadow-sm transition">
+                    查看四大培育階段 🗺️
+                </a>
+            </div>
+        </section>
+
+        <!-- 區塊一：四大階段時間軸 (Roadmap) -->
+        <section id="roadmap" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">國小教師養成四大核心階段</h3>
+                <p class="text-slate-500 mt-2">點選各階段卡片了解詳細條件與法規重點</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 階段 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-teal-100 flex flex-col justify-between hover:shadow-xl transition relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-teal-500"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-3 py-1 rounded-full">Stage 01</span>
+                            <span class="text-2xl">🌱</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">修讀教育學程</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            大一或大二透過校內甄試考取師資培育中心。須修畢至少 40 學分之教育專業課程，包含基礎、方法及教材教法。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 font-medium flex items-center">
+                        <span>⏳ 預計歷時：2 ~ 3 年</span>
+                    </div>
+                </div>
+
+                <!-- 階段 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-teal-100 flex flex-col justify-between hover:shadow-xl transition relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-emerald-500"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Stage 02</span>
+                            <span class="text-2xl">🏫</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">半年教育實習</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            修畢規定學分並取得學士學位後，至合作國小進行為期半年（約 8 月至隔年 1 月或 2 月至 7 月）之全時教育實習。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 font-medium flex items-center">
+                        <span>⏳ 預計歷時：半年（半年全時）</span>
+                    </div>
+                </div>
+
+                <!-- 階段 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-teal-100 flex flex-col justify-between hover:shadow-xl transition relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-sky-500"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full">Stage 03</span>
+                            <span class="text-2xl">✍️</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">教師資格考試 (教檢)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            全國統測。考科包含國語文能力、教育理念與實務、學習者發展與適應、課程教學與評量。平均滿 60 分且無單科 0 分即通過。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 font-medium flex items-center">
+                        <span>⏳ 每年 4 月報名、6 月考試</span>
+                    </div>
+                </div>
+
+                <!-- 階段 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-teal-100 flex flex-col justify-between hover:shadow-xl transition relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-indigo-500"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Stage 04</span>
+                            <span class="text-2xl">🏆</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">教師甄選 (教甄)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            取得教師證書後，參與各縣市正式教師聯合甄選（初試筆試、複試試教與口試），錄取後即為正式公立學校教師。
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs text-slate-500 font-medium flex items-center">
+                        <span>⏳ 每年 5 ~ 7 月各縣市招考</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊二：互動式修課學分檢核表 (Credit Tracker) -->
+        <section id="credits" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-teal-100">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 pb-6 border-b border-slate-100">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 tracking-widest uppercase bg-teal-50 px-3 py-1 rounded-full">Interactive Tool</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">國小教程修課學分檢核計算器</h3>
+                        <p class="text-slate-500 text-sm mt-1">勾選您已修畢或正在修習的課程，即時計算您的學分進度（國小教程法定至少須修畢 40 學分）。</p>
+                    </div>
+                    <!-- 總進度條外觀 -->
+                    <div class="mt-6 md:mt-0 bg-teal-50 p-4 rounded-2xl border border-teal-100 flex items-center space-x-4 min-w-[240px]">
+                        <div class="flex-1">
+                            <div class="flex justify-between text-sm font-semibold mb-1">
+                                <span class="text-slate-700">總學分進度</span>
+                                <span id="total-credits-text" class="text-teal-700">0 / 40 學分</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                <div id="progress-bar" class="bg-gradient-to-r from-teal-500 to-emerald-500 h-full w-0 transition-all duration-300"></div>
+                            </div>
+                        </div>
+                        <div id="status-badge" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">
+                            進行中
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 課程分類列表 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- 分類一：教育基礎課程 -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-bold text-slate-800 flex items-center space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
+                                <span>教育基礎課程 (建議 10 學分以上)</span>
+                            </h4>
+                            <span class="text-xs font-semibold text-slate-500 bg-white px-2.5 py-1 rounded-lg shadow-xs" id="cat1-sum">0 學分</span>
+                        </div>
+                        <div class="space-y-2.5" id="category-1">
+                            <!-- 項目會透過下方 JS 渲染 -->
+                        </div>
+                    </div>
+
+                    <!-- 分類二：教育方法課程 -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-bold text-slate-800 flex items-center space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                <span>教育方法課程 (建議 8 學分以上)</span>
+                            </h4>
+                            <span class="text-xs font-semibold text-slate-500 bg-white px-2.5 py-1 rounded-lg shadow-xs" id="cat2-sum">0 學分</span>
+                        </div>
+                        <div class="space-y-2.5" id="category-2">
+                            <!-- 項目會透過下方 JS 渲染 -->
+                        </div>
+                    </div>
+
+                    <!-- 分類三：教材教法與教學實習 -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-bold text-slate-800 flex items-center space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span>
+                                <span>教材教法與教學實習 (國小專門科目)</span>
+                            </h4>
+                            <span class="text-xs font-semibold text-slate-500 bg-white px-2.5 py-1 rounded-lg shadow-xs" id="cat3-sum">0 學分</span>
+                        </div>
+                        <div class="space-y-2.5" id="category-3">
+                            <!-- 項目會透過下方 JS 渲染 -->
+                        </div>
+                    </div>
+
+                    <!-- 分類四：教育實務與其他選修 -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-bold text-slate-800 flex items-center space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                                <span>教育實務與班級經營選修</span>
+                            </h4>
+                            <span class="text-xs font-semibold text-slate-500 bg-white px-2.5 py-1 rounded-lg shadow-xs" id="cat4-sum">0 學分</span>
+                        </div>
+                        <div class="space-y-2.5" id="category-4">
+                            <!-- 項目會透過下方 JS 渲染 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部重置按鈕 -->
+                <div class="mt-8 text-center">
+                    <button id="reset-btn" class="text-sm font-medium text-slate-500 hover:text-red-600 transition underline cursor-pointer">
+                        清除所有勾選記錄
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊三：升學與備考時程規劃指南 (Timeline Guide) -->
+        <section id="timeline" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-teal-600 tracking-widest uppercase bg-teal-50 px-3 py-1 rounded-full">Strategic Planning</span>
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">大學四年至畢業後的關鍵時程規劃</h3>
+                <p class="text-slate-500 mt-1">在對的時間做對的準備，讓教檢與教甄一次到位</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- 大一、大二 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="text-teal-600 font-black text-xl mb-1">大一 ~ 大二</div>
+                    <div class="text-xs text-slate-400 font-semibold mb-4">扎根與考取教程</div>
+                    <ul class="space-y-2.5 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span>維持系上學期成績（通常教程甄選看重GPA或面試）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span>參加師資培育中心說明會並報考國小師資生資格</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 大三、大四 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="text-teal-600 font-black text-xl mb-1">大三 ~ 大四</div>
+                    <div class="text-xs text-slate-400 font-semibold mb-4">修課衝刺與檢定準備</div>
+                    <ul class="space-y-2.5 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span>密集修習教育專業學分與教材教法課程</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span>開始刷教檢歷屆考古題，熟悉申論題與選擇題題型</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 畢業後半年 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="text-emerald-600 font-black text-xl mb-1">畢業當年（實習期）</div>
+                    <div class="text-xs text-slate-400 font-semibold mb-4">教育實習與教檢應考</div>
+                    <ul class="space-y-2.5 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <span class="text-emerald-500 mr-2">✓</span>
+                            <span>8月進入合作國小展開半年教育實習</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-500 mr-2">✓</span>
+                            <span>4月報名、6月上旬參加教師資格考試（教檢）</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 實習結束後 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="text-indigo-600 font-black text-xl mb-1">次年 7 月起</div>
+                    <div class="text-xs text-slate-400 font-semibold mb-4">教甄上榜與代理代課</div>
+                    <ul class="space-y-2.5 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <span class="text-indigo-500 mr-2">✓</span>
+                            <span>取得教檢通過證明與實習合格證書（領取教師證）</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-500 mr-2">✓</span>
+                            <span>全力衝刺各縣市教師甄選（初試/複試）或任教代理教師</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊四：常見 Q&A 折疊選單 (FAQ Accordion) -->
+        <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-teal-600 tracking-widest uppercase bg-teal-50 px-3 py-1 rounded-full">FAQ</span>
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">常見問題與法規答客問</h3>
+                <p class="text-slate-500 text-sm mt-1">關於國小教程與考試的大小疑問，這裡為你解答</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full text-left p-6 font-bold text-slate-800 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition">
+                        <span>Q1：非師培科系（如一般大學各學系）學生也可以修國小教育學程嗎？</span>
+                        <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                        可以的！多數大學的師資培育中心每年都會舉辦「教育學程甄試」，不限科系（部分特殊科系除外）皆可報考。通過筆試及面試錄取後，與師培生享有相同的修課與實習權利。
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full text-left p-6 font-bold text-slate-800 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition">
+                        <span>Q2：現行的師資培育制度是「先檢後實」還是「先實後檢」？</span>
+                        <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                        依據現行師資培育法規，師資生必須先「修畢規定教育學分並取得大學學位」後，即可先報考並通過教師資格考試（教檢），考過教檢後再進行半年的全時教育實習（也就是俗稱的<strong>先檢後實</strong>制）。
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full text-left p-6 font-bold text-slate-800 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition">
+                        <span>Q3：國小教師資格考試（教檢）的題型與及格標準是什麼？</span>
+                        <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                        教檢考試科目共 4 科（國語文能力、教育理念與實務、學習者發展與適應、課程教學與評量），題型包含選擇題與非選擇題（申論題）。及格標準為總成績平均滿 60 分，且部定科目不得有單科為 0 分。
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full text-left p-6 font-bold text-slate-800 flex justify-between items-center focus:outline-none hover:bg-slate-50 transition">
+                        <span>Q4：考上正式教甄之後，分發與學校選擇是如何進行的？</span>
+                        <svg class="w-5 h-5 text-teal-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                        各縣市（如台北市、新北市、台中市等）多數採用「獨立招考」或「聯合甄選」。考生通過初試後參加複試（試教與口試），依總成績高低進行統一分發選填志願，分發成功後即為該校之正式編制教師。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="bg-white border-t border-slate-200 mt-16 py-8 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+            <p class="font-medium text-slate-700">國小教師檢定與甄選全攻略互動網頁</p>
+            <p class="text-xs text-slate-400">本網頁內容依據我國現行師資培育法規與教育實務設計，各校師資培育中心規定若有異動，請以各校最新公告為準。</p>
+            <p class="text-xs text-teal-600 pt-2">© 2026 Elementary Teacher Journey Navigator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript 互動邏輯 -->
+    <script>
+        // 手機版選單開關
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 課程清單資料設定
+        const coursesData = {
+            category1: [
+                p(1, "教育原理與制度", 3),
+                p(2, "教育心理學", 3),
+                p(3, "教育社會學", 2),
+                p(4, "教育哲學", 2)
+            ],
+            category2: [
+                p(5, "教學原理", 2),
+                p(6, "班級經營", 2),
+                p(7, "教育測驗與評量", 2),
+                p(8, "特殊教育導論", 2)
+            ],
+            category3: [
+                p(9, "國語領域教材教法", 3),
+                p(10, "數學領域教材教法", 3),
+                p(11, "社會領域教材教法", 2),
+                p(12, "自然科學領域教材教法", 2),
+                p(13, "國民小學教學實習", 2)
+            ],
+            category4: [
+                p(14, "小學輔導原理與實務", 2),
+                p(15, "數位學習與資訊科技融入教學", 2),
+                p(16, "幼兒與兒童發展", 2),
+                p(17, "生命教育或品格教育選修", 2)
+            ]
+        };
+
+        function p(id, name, credits) {
+            return { id: `course-${id}`, name, credits };
+        }
+
+        // 渲染課程清單
+        function renderCourses() {
+            for (let cat in coursesData) {
+                const container = document.getElementById(cat);
+                container.innerHTML = '';
+                coursesData[cat].forEach(course => {
+                    const div = document.createElement('label');
+                    div.className = "flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 hover:border-teal-400 transition cursor-pointer select-none shadow-xs";
+                    div.innerHTML = `
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="${course.id}" data-category="${cat}" data-credits="${course.credits}" class="course-checkbox w-4 h-4 text-teal-600 rounded focus:ring-teal-500 border-slate-300">
+                            <span class="text-sm font-medium text-slate-700">${course.name}</span>
+                        </div>
+                        <span class="text-xs font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-md">${course.credits} 學分</span>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+            loadState();
+            updateCalculations();
+        }
+
+        // 計算學分與進度
+        function updateCalculations() {
+            let totalCredits = 0;
+            let catTotals = { category1: 0, category2: 0, category3: 0, category4: 0 };
+
+            document.querySelectorAll('.course-checkbox').forEach(chk => {
+                const credits = parseInt(chk.getAttribute('data-credits'));
+                const cat = chk.getAttribute('data-category');
+                if (chk.checked) {
+                    totalCredits += credits;
+                    catTotals[cat] += credits;
+                }
+            });
+
+            // 更新各分類小計
+            for (let cat in catTotals) {
+                document.getElementById(`${cat.replace('category', 'cat')}-sum`).innerText = `${catTotals[cat]} 學分`;
+            }
+
+            // 更新總進度與進度條 (以 40 學分為滿分基準)
+            const targetCredits = 40;
+            const percentage = Math.min(Math.round((totalCredits / targetCredits) * 100), 100);
+            
+            document.getElementById('total-credits-text').innerText = `${totalCredits} / ${targetCredits} 學分`;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+
+            const badge = document.getElementById('status-badge');
+            if (totalCredits >= 40) {
+                badge.className = "text-xs font-bold px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800";
+                badge.innerText = "已達法定門檻 🎉";
+            } else if (totalCredits >= 20) {
+                badge.className = "text-xs font-bold px-2.5 py-1 rounded-lg bg-teal-100 text-teal-800";
+                badge.innerText = "修課過半中 💪";
+            } else {
+                badge.className = "text-xs font-bold px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800";
+                badge.innerText = "起步修課中 🌱";
+            }
+
+            saveState();
+        }
+
+        // LocalStorage 儲存狀態
+        function saveState() {
+            let checkedIds = [];
+            document.querySelectorAll('.course-checkbox').forEach(chk => {
+                if (chk.checked) checkedIds.push(chk.id);
+            });
+            localStorage.setItem('teacher_courses_state', JSON.stringify(checkedIds));
+        }
+
+        function loadState() {
+            const saved = localStorage.getItem('teacher_courses_state');
+            if (saved) {
+                try {
+                    const checkedIds = JSON.parse(saved);
+                    checkedIds.forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) el.checked = true;
+                    });
+                } catch(e) {}
+            }
+        }
+
+        // 事件監聽：勾選變動
+        document.addEventListener('change', (e) => {
+            if (e.target.classList.contains('course-checkbox')) {
+                updateCalculations();
+            }
+        });
+
+        // 重置按鈕
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            if (confirm('確定要清除所有已勾選的課程紀錄嗎？')) {
+                document.querySelectorAll('.course-checkbox').forEach(chk => chk.checked = false);
+                updateCalculations();
+            }
+        });
+
+        // FAQ 折疊選單互動
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('svg');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // 頁面載入完成後初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCourses();
+        });
+    </script>
+</body>
+</html>
